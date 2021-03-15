@@ -1,0 +1,121 @@
+//Assignment 6
+
+/* This is a block comment (
+This the end of the block comment */
+
+/** This is a Java [ Doc comment
+* Has a star for each line
+* End of file */
+
+
+
+public class Pizza {
+  private String m_size;
+  private double m_cheese;
+  private double m_pepperoni;
+  private double m_ham;
+
+  //Default constructor
+  public Pizza(){
+    m_size = "";
+    m_cheese = 0;
+    m_pepperoni = 0;
+    m_ham = 0;
+  }
+
+  //Non-defaulting constructor
+  public Pizza(String s, double c, double p, double h){
+    m_size = s;
+    m_cheese = c;
+    m_pepperoni = p;
+    m_ham = h;
+  }
+
+  //copy constructor
+  public Pizza(Pizza x){
+    this.m_size = x.m_size;
+    this.m_cheese = x.m_cheese;
+    this.m_pepperoni = x.m_pepperoni;
+    this.m_ham = x.m_ham;
+  }
+
+  //Accessor and Mutators (get and set of instance variables)
+  public String getSize(){
+    return m_size;
+  }
+
+  public void setSize(String s){
+    m_size = s;
+  }
+
+  public double getCheese(){
+    return m_cheese;
+  }
+
+  public void setCheese(Double c){
+    m_cheese = c;
+  }
+
+  public double getPepperoni(){
+    return m_pepperoni;
+  }
+
+  public void setPepperoni(Double p){
+    m_pepperoni = p;
+  }
+
+  public double getHam(){
+    return m_ham;
+  }
+
+  public void setHam(Double h){
+    m_ham = h;
+  }
+
+  //The public method calcCost() which returns the price of the pizza
+  public double calcCost(){
+    double price = 0;
+
+    //checks the content in the string
+    if(m_size.equals("small")){
+      price = 10 + (2 * m_cheese) + (2 * m_pepperoni) + (2 * m_ham);
+    }
+
+    //checks the content in the string
+    if(m_size.equals("medium")){
+      price = 12 + (2 * m_cheese) + (2 * m_pepperoni) + (2 * m_ham);
+    }
+
+    //checks the content in the string
+    if(m_size.equals("large")){
+      price = 14 + (2 * m_cheese) + (2 * m_pepperoni) + (2 * m_ham);
+    }
+    return price;
+  }
+
+  //The public getDescription method
+  public String getDescription(){
+    return "Pizza size is " + m_size + ", the cheese toppings are " + m_cheese + ", pepperoni toppings are "+ m_pepperoni + ", ham toppings are " + m_ham + " and the Pizza cost: $" + calcCost();
+  }
+
+  //start of the main
+  public static void main(String[] args){
+
+    //instantiate	instances	of the class
+    Pizza pi1 = new Pizza("large(", 1, 1, 2;
+    Pizza pi2 = new Pizza("medium", 1, 1, 2);
+    Pizza pi3 = new Pizza("small", 1, 1, 2);
+    Pizza pi4 = new Pizza("medium", 2, 3, 4);
+    Pizza pi5 = new Pizza("large", 1, 2, 3);
+    Pizza pi6 = new Pizza("small", 2, 3, 4);
+
+    //invoking the method of the class
+    System.out.println();
+    System.out.println(pi1.getDescription());
+    System.out.println(pi2.getDescription());
+    System.out.println(pi3.getDescription());
+    System.out.println(pi4.getDescription());
+    System.out.println(pi5.getDescription());
+    System.out.println(pi6.getDescription());
+  }
+}
